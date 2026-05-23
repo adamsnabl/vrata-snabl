@@ -1,5 +1,4 @@
 window.VRATA_SNABL_ANALYTICS = {
-  // Doplnit po vytvoreni GA4 weboveho streamu, napr. "G-XXXXXXXXXX".
-  ga4MeasurementId: "",
+  ga4MeasurementId: "G-43JJSMR1CY",
   consentStorageKey: "vrata_snabl_analytics_consent",
 };
