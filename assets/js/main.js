@@ -1,6 +1,16 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const nav = document.querySelector("[data-nav]");
 const form = document.querySelector("[data-contact-form]");
+const formStatus = document.querySelector("[data-form-status]");
+
+const closeNav = () => {
+  if (!nav || !navToggle) return;
+
+  nav.classList.remove("is-open");
+  document.body.classList.remove("nav-open");
+  navToggle.setAttribute("aria-expanded", "false");
+  navToggle.setAttribute("aria-label", "Otevřít menu");
+};
 
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {
@@ -11,11 +21,38 @@ if (navToggle && nav) {
   });
 
   nav.addEventListener("click", (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
-      nav.classList.remove("is-open");
-      document.body.classList.remove("nav-open");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.setAttribute("aria-label", "Otevřít menu");
+    const link = event.target instanceof Element ? event.target.closest("a") : null;
+
+    if (link) {
+      const href = link.getAttribute("href");
+
+      if (href && href.startsWith("#")) {
+        const target = document.querySelector(href);
+
+        if (target) {
+          event.preventDefault();
+          closeNav();
+          target.scrollIntoView({ block: "start" });
+          history.pushState(null, "", href);
+          return;
+        }
+      }
+
+      closeNav();
+    }
+  });
+
+  window.addEventListener("hashchange", closeNav);
+  window.addEventListener("pageshow", closeNav);
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 981px)").matches) {
+      closeNav();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeNav();
     }
   });
 }
@@ -38,8 +75,15 @@ if (form) {
     ];
 
     const service = data.get("service") || "servis";
+    const email = form.getAttribute("data-contact-email") || "adam@vratasnabl.cz";
     const subject = encodeURIComponent(`Poptávka z webu - ${service}`);
     const body = encodeURIComponent(lines.join("\n"));
-    window.location.href = `mailto:adam@vratasnabl.cz?subject=${subject}&body=${body}`;
+
+    if (formStatus) {
+      formStatus.hidden = false;
+      formStatus.textContent = `Otevřeli jsme e-mailovou aplikaci s adresou ${email}. Zprávu je potřeba ještě odeslat. Pokud se e-mailová aplikace neotevře, zavolejte 777 286 310.`;
+    }
+
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   });
 }
