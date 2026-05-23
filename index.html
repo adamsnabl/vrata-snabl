@@ -566,7 +566,8 @@
             referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
-        <form class="contact-form" aria-describedby="form-note form-status" data-contact-form data-contact-email="adam@vratasnabl.cz">
+        <form class="contact-form" aria-describedby="form-note form-status" data-contact-form data-contact-email="adam@vratasnabl.cz" data-form-endpoint="https://formsubmit.co/ajax/adam@vratasnabl.cz">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
           <label>
             Jméno a příjmení
             <input type="text" name="name" autocomplete="name" required>
@@ -574,6 +575,10 @@
           <label>
             Telefon
             <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required>
+          </label>
+          <label>
+            E-mail
+            <input type="email" name="email" autocomplete="email" placeholder="nepovinné">
           </label>
           <label>
             Lokalita realizace
@@ -595,8 +600,8 @@
             Popis závady, montáže nebo nových vrat
             <textarea name="message" rows="5" required></textarea>
           </label>
-          <button class="btn btn-primary wide" type="submit">Připravit e-mailovou poptávku</button>
-          <p class="form-note" id="form-note">Formulář otevře připravený e-mail na adam@vratasnabl.cz. Zprávu je potřeba v e-mailové aplikaci ještě odeslat, fotku zařízení můžete přiložit před odesláním.</p>
+          <button class="btn btn-primary wide" type="submit">Odeslat poptávku</button>
+          <p class="form-note" id="form-note">Poptávka se odešle na adam@vratasnabl.cz. Fotku zařízení můžete poslat následně e-mailem nebo ji domluvíme po telefonu.</p>
           <p class="form-note" id="form-status" hidden data-form-status></p>
         </form>
       </section>
