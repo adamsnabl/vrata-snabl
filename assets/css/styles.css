@@ -870,6 +870,16 @@ h3 {
   font-size: 22px;
 }
 
+.contact-map {
+  display: block;
+  width: 100%;
+  min-height: 260px;
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
 .contact-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
