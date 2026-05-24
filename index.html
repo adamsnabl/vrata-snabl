@@ -574,7 +574,11 @@
           </div>
         </div>
 
-        <form class="contact-form" aria-describedby="form-note form-status" data-contact-form data-contact-email="adam@vratasnabl.cz" data-form-endpoint="https://formsubmit.co/ajax/adam@vratasnabl.cz">
+        <form class="contact-form" action="https://formsubmit.co/adam@vratasnabl.cz" method="POST" enctype="multipart/form-data" aria-describedby="form-note form-status" data-contact-form data-contact-email="adam@vratasnabl.cz" data-form-endpoint="https://formsubmit.co/ajax/adam@vratasnabl.cz">
+          <input type="hidden" name="_subject" value="Poptávka z webu Vrata Šnábl">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://www.vratasnabl.cz/dekujeme.html">
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
           <label>
             Jméno a příjmení
@@ -609,7 +613,7 @@
             <textarea name="message" rows="5" required></textarea>
           </label>
           <button class="btn btn-primary wide" type="submit">Odeslat poptávku</button>
-          <p class="form-note" id="form-note">Formulář se pokusí odeslat poptávku na adam@vratasnabl.cz. Pokud automatické odeslání nebude dostupné, otevře se připravený e-mail na stejnou adresu. Fotku zařízení můžete poslat následně e-mailem nebo ji domluvíme po telefonu.</p>
+          <p class="form-note" id="form-note">Formulář odešle poptávku na adam@vratasnabl.cz. Pokud by služba nebyla dostupná, web otevře připravený e-mail na stejnou adresu. Fotku zařízení můžete poslat následně e-mailem nebo ji domluvíme po telefonu.</p>
           <p class="form-note" id="form-status" hidden data-form-status></p>
         </form>
 

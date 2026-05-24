@@ -129,6 +129,11 @@ if (form) {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
     const data = new FormData(form);
     const email = form.getAttribute("data-contact-email") || "adam@vratasnabl.cz";
     const endpoint = form.getAttribute("data-form-endpoint") || "";
@@ -143,10 +148,10 @@ if (form) {
     }
 
     const payload = {
-      _subject: `${text.subjectPrefix} - ${service}`,
-      _template: "table",
-      _captcha: "false",
-      _url: `${window.location.origin}${window.location.pathname}${isEnglish ? "#contact" : "#kontakt"}`,
+      _subject: data.get("_subject") || `${text.subjectPrefix} - ${service}`,
+      _template: data.get("_template") || "table",
+      _captcha: data.get("_captcha") || "false",
+      submitted_from: `${window.location.origin}${window.location.pathname}${isEnglish ? "#contact" : "#kontakt"}`,
       name: data.get("name") || "",
       phone: data.get("phone") || "",
       email: data.get("email") || "",
