@@ -868,23 +868,24 @@ h3 {
 
 .contact-section {
   display: grid;
-  grid-template-columns: 0.76fr 1fr;
-  gap: 52px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
+  gap: 28px 32px;
+  align-items: stretch;
 }
 
 .contact-copy {
-  position: sticky;
-  top: 104px;
+  grid-column: 1 / -1;
 }
 
 .contact-copy p {
   margin-top: 18px;
   font-size: 18px;
+  max-width: 880px;
 }
 
 .contact-methods {
   display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
   margin-top: 26px;
 }
@@ -905,14 +906,41 @@ h3 {
 
 .contact-methods strong {
   color: var(--brand-dark);
-  font-size: 22px;
+  font-size: clamp(17px, 1.55vw, 22px);
+  line-height: 1.25;
+}
+
+.contact-map-panel {
+  display: grid;
+  grid-template-rows: minmax(360px, 1fr) auto;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 14px 34px rgba(22, 32, 42, 0.08);
+}
+
+.contact-map-panel h3 {
+  margin: 4px 0 0;
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.1;
+}
+
+.contact-map-panel p:not(.eyebrow) {
+  margin: 12px 0 18px;
+  color: var(--muted);
+}
+
+.contact-map-panel .btn {
+  width: 100%;
 }
 
 .contact-map {
   display: block;
   width: 100%;
-  min-height: 260px;
-  margin-top: 12px;
+  min-height: 320px;
+  height: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
@@ -1174,6 +1202,14 @@ textarea:focus {
     position: static;
   }
 
+  .contact-methods {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-map-panel {
+    grid-template-rows: minmax(300px, 360px) auto;
+  }
+
   .site-footer {
     grid-template-columns: 1fr;
   }
@@ -1252,6 +1288,7 @@ textarea:focus {
   .realization-grid,
   .service-photo-strip,
   .realization-proof,
+  .contact-methods,
   .contact-form {
     grid-template-columns: 1fr;
   }
@@ -1277,6 +1314,11 @@ textarea:focus {
 
   .contact-form .wide {
     grid-column: auto;
+  }
+
+  .contact-map-panel {
+    padding: 18px;
+    grid-template-rows: minmax(280px, 320px) auto;
   }
 
   .site-footer {

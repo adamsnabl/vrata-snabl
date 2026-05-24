@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="10" fill="#142f3e"/>
-  <text x="32" y="39" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" fill="#ffffff">VŠ</text>
+  <rect width="64" height="64" rx="12" fill="#142f3e"/>
+  <path d="M0 56h64v8H0z" fill="#b33b18"/>
+  <text x="32" y="39" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900" fill="#ffffff">VŠ</text>
 </svg>

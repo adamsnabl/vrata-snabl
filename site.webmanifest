@@ -1,0 +1,23 @@
+{
+  "name": "Vrata Šnábl",
+  "short_name": "Vrata Šnábl",
+  "description": "Servis, výroba a montáž vrat, bran, pohonů, závor a automatických dveří v Praze a Středočeském kraji.",
+  "lang": "cs",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f4ef",
+  "theme_color": "#142f3e",
+  "icons": [
+    {
+      "src": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
