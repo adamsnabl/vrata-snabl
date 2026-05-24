@@ -3,6 +3,26 @@
   const measurementId = String(config.ga4MeasurementId || "").trim();
   const storageKey = config.consentStorageKey || "vrata_snabl_analytics_consent";
   const validMeasurementId = /^G-[A-Z0-9]+$/i.test(measurementId);
+  const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
+  const copy = isEnglish ? {
+    inactive: "Analytics is not active yet. Once the GA4 measurement ID is set, cookie settings can be changed here.",
+    bannerLabel: "Analytical cookie settings",
+    title: "Help us improve the website",
+    text: "We use Google Analytics only after your consent. We measure visits and clicks on phone, e-mail, map and inquiry actions. Form message text is not sent to analytics.",
+    privacy: "Privacy and cookies",
+    privacyHref: "privacy-cookies.html",
+    deny: "Decline",
+    accept: "Allow analytics",
+  } : {
+    inactive: "Analytika zatím není aktivní. Jakmile bude doplněné GA4 měřicí ID, půjde zde upravit souhlas s měřením.",
+    bannerLabel: "Nastavení analytických cookies",
+    title: "Pomozte nám zlepšovat web",
+    text: "Používáme Google Analytics pouze po vašem souhlasu. Měříme návštěvnost a kliknutí na telefon, e-mail, mapu a poptávku. Texty z formuláře neodesíláme do analytiky.",
+    privacy: "Soukromí a cookies",
+    privacyHref: "ochrana-osobnich-udaju.html",
+    deny: "Odmítnout",
+    accept: "Povolit analytiku",
+  };
 
   if (!validMeasurementId) {
     window.vrataSnablTrack = function () {};
@@ -11,7 +31,7 @@
       if (!button) return;
 
       event.preventDefault();
-      window.alert("Analytika zatím není aktivní. Jakmile bude doplněné GA4 měřicí ID, půjde zde upravit souhlas s měřením.");
+      window.alert(copy.inactive);
     });
     return;
   }
@@ -85,16 +105,16 @@
     const banner = document.createElement("section");
     banner.className = "cookie-consent";
     banner.setAttribute("data-cookie-banner", "");
-    banner.setAttribute("aria-label", "Nastavení analytických cookies");
+    banner.setAttribute("aria-label", copy.bannerLabel);
     banner.innerHTML = `
       <div>
-        <strong>Pomozte nám zlepšovat web</strong>
-        <p>Používáme Google Analytics pouze po vašem souhlasu. Měříme návštěvnost a kliknutí na telefon, e-mail, mapu a poptávku. Texty z formuláře neodesíláme do analytiky.</p>
-        <a href="ochrana-osobnich-udaju.html">Soukromí a cookies</a>
+        <strong>${copy.title}</strong>
+        <p>${copy.text}</p>
+        <a href="${copy.privacyHref}">${copy.privacy}</a>
       </div>
       <div class="cookie-consent__actions">
-        <button type="button" class="btn btn-secondary" data-cookie-deny>Odmítnout</button>
-        <button type="button" class="btn btn-primary" data-cookie-accept>Povolit analytiku</button>
+        <button type="button" class="btn btn-secondary" data-cookie-deny>${copy.deny}</button>
+        <button type="button" class="btn btn-primary" data-cookie-accept>${copy.accept}</button>
       </div>
     `;
 
@@ -123,7 +143,7 @@
     if (/maps\.app\.goo\.gl|google\.com\/maps/i.test(href)) {
       return /profil|recenze/.test(text) ? "click_google_profile" : "click_map";
     }
-    if (href.includes("#kontakt") && /poptav|kontakt/.test(text.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) {
+    if (/#(?:kontakt|contact)$/.test(href) && /poptav|kontakt|inquiry|contact/.test(text.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) {
       return "click_inquiry_cta";
     }
 
@@ -153,7 +173,7 @@
       inquiry_type: form.querySelector("[name='service']")?.value || "",
     });
     track("generate_lead", {
-      method: "mailto_form",
+      method: "contact_form",
     });
   }, true);
 
