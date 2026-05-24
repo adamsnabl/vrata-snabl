@@ -168,12 +168,9 @@
     const form = event.target instanceof Element ? event.target.closest("[data-contact-form]") : null;
     if (!form) return;
 
-    track("submit_inquiry", {
+    track("start_inquiry_submit", {
       form_id: "contact_form",
       inquiry_type: form.querySelector("[name='service']")?.value || "",
-    });
-    track("generate_lead", {
-      method: "contact_form",
     });
   }, true);
 

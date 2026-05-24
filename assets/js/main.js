@@ -184,7 +184,23 @@ if (form) {
 
       form.reset();
       setFormStatus(`${text.sent} ${email}. ${text.sentFollowUp}`);
+      if (typeof window.vrataSnablTrack === "function") {
+        window.vrataSnablTrack("submit_inquiry", {
+          form_id: "contact_form",
+          inquiry_type: service,
+          delivery: "formsubmit",
+        });
+        window.vrataSnablTrack("generate_lead", {
+          method: "contact_form",
+        });
+      }
     } catch (error) {
+      if (typeof window.vrataSnablTrack === "function") {
+        window.vrataSnablTrack("open_email_fallback", {
+          form_id: "contact_form",
+          inquiry_type: service,
+        });
+      }
       setFormStatus(`${text.failed} ${email}; ${text.failedFollowUp}`);
       window.location.href = buildMailtoLink(data, email);
     } finally {
