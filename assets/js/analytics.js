@@ -141,7 +141,7 @@
     if (href.startsWith("mailto:")) return "click_email";
     if (/wa\.me|whatsapp/i.test(href)) return "click_whatsapp";
     if (/maps\.app\.goo\.gl|google\.com\/maps/i.test(href)) {
-      return /profil|recenze/.test(text) ? "click_google_profile" : "click_map";
+      return /profil|profile|recenze|reviews?/.test(text) ? "click_google_profile" : "click_map";
     }
     if (/#(?:kontakt|contact)$/.test(href) && /poptav|kontakt|inquiry|contact/.test(text.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) {
       return "click_inquiry_cta";
