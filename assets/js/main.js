@@ -18,13 +18,12 @@ const text = isEnglish ? {
   service: "Inquiry type",
   messageLabel: "Fault, installation or new door description:",
   subjectPrefix: "Website inquiry",
-  fallbackOpened: "We opened your e-mail app with the address",
-  fallbackSend: "The message still needs to be sent. If the e-mail app does not open, please call 777 286 310.",
   sending: "Sending inquiry...",
   sent: "Thank you, the inquiry has been sent to",
   sentFollowUp: "We will get back to you as soon as possible.",
-  failed: "The inquiry could not be sent automatically. We opened a prepared e-mail to",
-  failedFollowUp: "please send the message there, or call 777 286 310.",
+  failed: "The inquiry could not be sent automatically.",
+  failedFollowUp: "Please call 777 286 310 or send the inquiry directly to",
+  unavailable: "Automatic sending is not configured yet.",
 } : {
   closeMenu: "Zavřít menu",
   openMenu: "Otevřít menu",
@@ -36,13 +35,12 @@ const text = isEnglish ? {
   service: "Čeho se poptávka týká",
   messageLabel: "Popis závady, montáže nebo nových vrat:",
   subjectPrefix: "Poptávka z webu",
-  fallbackOpened: "Otevřeli jsme e-mailovou aplikaci s adresou",
-  fallbackSend: "Zprávu je potřeba ještě odeslat. Pokud se e-mailová aplikace neotevře, zavolejte 777 286 310.",
   sending: "Odesíláme poptávku...",
   sent: "Děkujeme, poptávka byla odeslána na",
   sentFollowUp: "Ozveme se co nejdříve.",
-  failed: "Poptávku se nepodařilo odeslat automaticky. Otevřeli jsme proto připravený e-mail na",
-  failedFollowUp: "zprávu prosím ještě odešlete, nebo zavolejte 777 286 310.",
+  failed: "Poptávku se nepodařilo automaticky odeslat.",
+  failedFollowUp: "Zavolejte prosím 777 286 310 nebo pošlete poptávku přímo na",
+  unavailable: "Automatické odeslání zatím není nastavené.",
 };
 
 const closeNav = () => {
@@ -150,32 +148,54 @@ if (revealTargets.length && !reduceMotion.matches) {
   }
 }
 
-const buildMailtoLink = (formData, email) => {
-  const lines = [
-    text.inquiryTitle,
-    "",
-    `${text.name}: ${formData.get("name") || ""}`,
-    `${text.phone}: ${formData.get("phone") || ""}`,
-    `${text.email}: ${formData.get("email") || ""}`,
-    `${text.location}: ${formData.get("location") || ""}`,
-    `${text.service}: ${formData.get("service") || ""}`,
-    "",
-    text.messageLabel,
-    `${formData.get("message") || ""}`,
-  ];
-
-  const service = formData.get("service") || (isEnglish ? "service" : "servis");
-  const subject = encodeURIComponent(`${text.subjectPrefix} - ${service}`);
-  const body = encodeURIComponent(lines.join("\n"));
-
-  return `mailto:${email}?subject=${subject}&body=${body}`;
-};
-
 const setFormStatus = (message) => {
   if (!formStatus) return;
 
   formStatus.hidden = false;
   formStatus.textContent = message;
+};
+
+const contactFormStartedAt = form?.querySelector("[name='form_started_at']");
+if (contactFormStartedAt) {
+  contactFormStartedAt.value = String(Date.now());
+}
+
+const parseFormEndpoints = (value) => (value || "")
+  .split(",")
+  .map((endpoint) => endpoint.trim())
+  .filter(Boolean);
+
+const sendFormPayload = async (endpoint, payload) => {
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 10000);
+
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+
+    if (!response.ok) {
+      throw new Error(`Form endpoint returned ${response.status}`);
+    }
+
+    const result = await response.json().catch(() => ({}));
+    if (result.success === false || result.success === "false") {
+      throw new Error(result.message || "Form endpoint did not accept the message");
+    }
+
+    return {
+      endpoint,
+      provider: endpoint.includes("formsubmit.co") ? "formsubmit" : "forpsi_php",
+    };
+  } finally {
+    window.clearTimeout(timeout);
+  }
 };
 
 if (form) {
@@ -189,14 +209,16 @@ if (form) {
 
     const data = new FormData(form);
     const email = form.getAttribute("data-contact-email") || "adam@vratasnabl.cz";
-    const endpoint = form.getAttribute("data-form-endpoint") || "";
+    const endpoints = [
+      ...parseFormEndpoints(form.getAttribute("data-form-endpoint")),
+      ...parseFormEndpoints(form.getAttribute("data-form-fallback-endpoint")),
+    ];
     const service = data.get("service") || (isEnglish ? "service" : "servis");
 
     if (data.get("_honey")) return;
 
-    if (!endpoint) {
-      setFormStatus(`${text.fallbackOpened} ${email}. ${text.fallbackSend}`);
-      window.location.href = buildMailtoLink(data, email);
+    if (!endpoints.length) {
+      setFormStatus(`${text.unavailable} ${text.failedFollowUp} ${email}.`);
       return;
     }
 
@@ -211,37 +233,39 @@ if (form) {
       location: data.get("location") || "",
       service,
       message: data.get("message") || "",
+      form_started_at: data.get("form_started_at") || "",
     };
 
     try {
       if (formSubmitButton) formSubmitButton.disabled = true;
       setFormStatus(text.sending);
 
-      const response = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+      let deliveryResult = null;
+      let lastError = null;
 
-      if (!response.ok) {
-        throw new Error(`Form endpoint returned ${response.status}`);
+      for (const endpoint of endpoints) {
+        try {
+          deliveryResult = await sendFormPayload(endpoint, payload);
+          break;
+        } catch (error) {
+          lastError = error;
+        }
       }
 
-      const result = await response.json().catch(() => ({}));
-      if (result.success === false || result.success === "false") {
-        throw new Error(result.message || "Form endpoint did not accept the message");
+      if (!deliveryResult) {
+        throw lastError || new Error("No form endpoint accepted the message");
       }
 
       form.reset();
+      if (contactFormStartedAt) {
+        contactFormStartedAt.value = String(Date.now());
+      }
       setFormStatus(`${text.sent} ${email}. ${text.sentFollowUp}`);
       if (typeof window.vrataSnablTrack === "function") {
         window.vrataSnablTrack("submit_inquiry", {
           form_id: "contact_form",
           inquiry_type: service,
-          delivery: "formsubmit",
+          delivery: deliveryResult.provider,
         });
         window.vrataSnablTrack("generate_lead", {
           method: "contact_form",
@@ -249,13 +273,12 @@ if (form) {
       }
     } catch (error) {
       if (typeof window.vrataSnablTrack === "function") {
-        window.vrataSnablTrack("open_email_fallback", {
+        window.vrataSnablTrack("form_send_failed", {
           form_id: "contact_form",
           inquiry_type: service,
         });
       }
-      setFormStatus(`${text.failed} ${email}; ${text.failedFollowUp}`);
-      window.location.href = buildMailtoLink(data, email);
+      setFormStatus(`${text.failed} ${text.failedFollowUp} ${email}.`);
     } finally {
       if (formSubmitButton) formSubmitButton.disabled = false;
     }
