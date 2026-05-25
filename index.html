@@ -189,8 +189,8 @@
         <div class="hero-overlay"></div>
         <div class="hero-inner">
           <p class="eyebrow">Praha a Středočeský kraj</p>
-          <h1>Vše pro vrata,<br>brány a pohony</h1>
-          <p class="hero-lead">Vyrobíme a namontujeme vrata na míru, opravíme stávající vrata nebo bránu a doplníme pohon, motor či ovládání. Řešíme také závory a automatické dveře pro domy, firmy i SVJ v Praze a Středočeském kraji. Nejrychlejší je zavolat.</p>
+          <h1 aria-label="Vrata a brány: servis i výroba na míru">Vrata a brány:<br>servis i výroba<br>na míru</h1>
+          <p class="hero-lead">Opravíme vrata, brány, pohony, závory i automatické dveře. Dodáme také nová vrata na míru včetně motoru a ovládání pro Prahu a Středočeský kraj.</p>
           <div class="hero-actions" role="group" aria-label="Hlavní akce">
             <a class="btn btn-primary" href="tel:+420777286310">Zavolat&nbsp;777&nbsp;286&nbsp;310</a>
             <a class="btn btn-secondary" href="#kontakt">Poslat poptávku</a>
@@ -225,8 +225,10 @@
 
       <section class="section" id="sluzby">
         <div class="section-heading">
-          <p class="eyebrow">Co řešíme</p>
-          <h2>Opravíme závadu nebo navrhneme nové řešení na míru</h2>
+          <div>
+            <p class="eyebrow">Co řešíme</p>
+            <h2>Opravíme závadu nebo navrhneme nové řešení na míru</h2>
+          </div>
           <p>Nejprve zjistíme, co se zařízením děje. Když stačí oprava nebo seřízení, vyřešíme servis. Pokud je vhodnější modernizace, navrhneme úpravu, nový pohon nebo kompletní dodávku vrat na míru od zaměření po montáž s motorem.</p>
         </div>
 
@@ -633,6 +635,10 @@
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value="https://www.vratasnabl.cz/dekujeme.html">
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+          <div class="form-heading wide">
+            <h3>Krátká poptávka</h3>
+            <p>Stačí kontakt, lokalita a stručný popis zařízení. Ozveme se s dalším postupem.</p>
+          </div>
           <label>
             Jméno a příjmení
             <input type="text" name="name" autocomplete="name" required>
@@ -663,7 +669,7 @@
           </label>
           <label class="wide">
             Popis závady, montáže nebo nových vrat
-            <textarea name="message" rows="5" required></textarea>
+            <textarea name="message" rows="5" required placeholder="Např. vrata nejdou otevřít, brána drhne, potřebuji vrata na míru včetně pohonu..."></textarea>
           </label>
           <button class="btn btn-primary wide" type="submit">Odeslat poptávku</button>
           <p class="form-note" id="form-note">Formulář odešle poptávku na adam@vratasnabl.cz. Pokud by služba nebyla dostupná, web otevře připravený e-mail na stejnou adresu. Fotku zařízení můžete poslat následně e-mailem nebo ji domluvíme po telefonu.</p>

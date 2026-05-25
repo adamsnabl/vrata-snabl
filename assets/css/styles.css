@@ -1093,6 +1093,20 @@ h3 {
   font-weight: 800;
 }
 
+.form-heading {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 4px;
+}
+
+.form-heading h3 {
+  margin: 0 0 4px;
+}
+
+.form-heading p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .contact-form .wide {
   grid-column: 1 / -1;
 }
@@ -1136,7 +1150,7 @@ textarea:focus {
   grid-template-columns: minmax(260px, 1fr) auto;
   gap: 18px;
   align-items: center;
-  width: min(760px, calc(100% - 36px));
+  width: min(660px, calc(100% - 36px));
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
@@ -1354,8 +1368,9 @@ textarea:focus {
 @media (max-width: 680px) {
   .site-header {
     min-height: 68px;
-    gap: 12px;
-    padding: 10px 16px 12px;
+    grid-template-columns: auto minmax(78px, 1fr) auto auto;
+    gap: 8px;
+    padding: 10px 12px 12px;
   }
 
   .brand small {
@@ -1367,8 +1382,52 @@ textarea:focus {
     height: 40px;
   }
 
+  .language-switch {
+    grid-column: 3;
+    grid-row: 1;
+    display: inline-flex;
+    padding: 2px;
+  }
+
+  .nav-toggle {
+    grid-column: 4;
+    grid-row: 1;
+    width: 42px;
+    height: 42px;
+  }
+
+  .language-switch a {
+    min-width: 34px;
+    min-height: 34px;
+    font-size: 12px;
+  }
+
+  .language-switch a[aria-current="page"] {
+    display: none;
+  }
+
+  .header-call {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    width: auto;
+    min-height: 40px;
+    padding: 8px 10px;
+    box-shadow: none;
+  }
+
+  .header-call span {
+    display: none;
+  }
+
+  .header-call strong {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
   .main-nav {
-    inset: 118px 0 auto;
+    inset: 68px 0 auto;
+    max-height: calc(100dvh - 68px);
   }
 
   .cookie-consent {
@@ -1379,7 +1438,7 @@ textarea:focus {
   }
 
   [id] {
-    scroll-margin-top: 126px;
+    scroll-margin-top: 82px;
   }
 
   .cookie-consent__actions,
@@ -1402,12 +1461,12 @@ textarea:focus {
   }
 
   h1 {
-    font-size: clamp(34px, 10.5vw, 46px);
+    font-size: clamp(34px, 9.5vw, 42px);
     line-height: 1.02;
   }
 
   .hero-lead {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .hero-actions .btn {
