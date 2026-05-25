@@ -1,9 +1,11 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const nav = document.querySelector("[data-nav]");
+const header = document.querySelector(".site-header");
 const form = document.querySelector("[data-contact-form]");
 const formStatus = document.querySelector("[data-form-status]");
 const formSubmitButton = form?.querySelector("button[type='submit']");
 const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const text = isEnglish ? {
   closeMenu: "Close menu",
@@ -95,6 +97,57 @@ if (navToggle && nav) {
       closeNav();
     }
   });
+}
+
+if (header) {
+  let ticking = false;
+
+  const updateHeaderState = () => {
+    header.classList.toggle("has-scrolled", window.scrollY > 8);
+    ticking = false;
+  };
+
+  updateHeaderState();
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(updateHeaderState);
+    }
+  }, { passive: true });
+}
+
+const revealTargets = document.querySelectorAll([
+  ".service-card",
+  ".realization-card",
+  ".case-card",
+  ".step",
+  ".issue-card",
+  ".proof-list div",
+  ".faq-list details",
+  ".contact-methods a",
+  ".keyword-grid li",
+].join(","));
+
+if (revealTargets.length && !reduceMotion.matches) {
+  revealTargets.forEach((element) => element.classList.add("reveal-item"));
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: "0px 0px -10% 0px",
+      threshold: 0.08,
+    });
+
+    revealTargets.forEach((element) => revealObserver.observe(element));
+  } else {
+    revealTargets.forEach((element) => element.classList.add("is-visible"));
+  }
 }
 
 const buildMailtoLink = (formData, email) => {
