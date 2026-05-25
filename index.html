@@ -629,13 +629,13 @@
           </div>
         </div>
 
-        <form class="contact-form" action="https://form.vratasnabl.cz/send.php" method="POST" enctype="multipart/form-data" aria-describedby="form-note form-status" data-contact-form data-contact-email="adam@vratasnabl.cz" data-form-endpoint="https://form.vratasnabl.cz/send.php">
-          <input type="hidden" name="_subject" value="Poptávka z webu Vrata Šnábl">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://www.vratasnabl.cz/dekujeme.html">
-          <input type="hidden" name="form_started_at" value="">
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-describedby="form-note form-status" data-contact-form data-contact-email="adam@vratasnabl.cz" data-form-provider="web3forms">
+          <input type="hidden" name="access_key" value="703b6c4e-8ddd-4c80-b0d0-69795e501aaf">
+          <input type="hidden" name="subject" value="Poptávka z webu Vrata Šnábl">
+          <input type="hidden" name="from_name" value="Vrata Šnábl">
+          <input type="hidden" name="redirect" value="https://www.vratasnabl.cz/dekujeme.html">
+          <input type="hidden" name="page_url" value="https://www.vratasnabl.cz/">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display: none;">
           <div class="form-heading wide">
             <h3>Krátká poptávka</h3>
             <p>Stačí kontakt, lokalita a stručný popis zařízení. Ozveme se s dalším postupem.</p>
@@ -673,7 +673,7 @@
             <textarea name="message" rows="5" required placeholder="Např. vrata nejdou otevřít, brána drhne, potřebuji vrata na míru včetně pohonu..."></textarea>
           </label>
           <button class="btn btn-primary wide" type="submit">Odeslat poptávku</button>
-          <p class="form-note" id="form-note">Formulář odešle poptávku automaticky na adam@vratasnabl.cz. Pokud by odeslání nebylo dostupné, zobrazí se upozornění a nejrychlejší je zavolat. Fotku zařízení můžete poslat následně e-mailem nebo ji domluvíme po telefonu.</p>
+          <p class="form-note" id="form-note">Formulář odešle poptávku automaticky na adam@vratasnabl.cz. Po úspěšném odeslání se zobrazí potvrzení. Fotku zařízení můžete poslat následně e-mailem nebo ji domluvíme po telefonu.</p>
           <p class="form-note" id="form-status" hidden data-form-status></p>
         </form>
 

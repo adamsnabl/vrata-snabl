@@ -1,6 +1,21 @@
-# Formulář Vrata Šnábl přes Forpsi
+# Formulář Vrata Šnábl
 
 Tento web běží na GitHub Pages. GitHub Pages umí zobrazit statické HTML, CSS a JS, ale neumí spustit PHP. Proto kontaktní formulář nemůže posílat e-maily sám přímo z GitHub Pages.
+
+Aktuální ostré řešení používá Web3Forms, stejně jako web Kontejnerovka. Formulář se odesílá klasickým HTML POST požadavkem na `https://api.web3forms.com/submit`, po úspěchu přesměruje zákazníka na děkovací stránku a poptávka chodí na `adam@vratasnabl.cz`.
+
+Forpsi PHP endpoint níže zůstává jako možná vlastní alternativa do budoucna, pokud bude připravená subdoména nebo hostingový endpoint.
+
+## Aktuální řešení: Web3Forms
+
+- endpoint: `https://api.web3forms.com/submit`
+- access key: veřejný klíč navázaný na `adam@vratasnabl.cz`
+- příjemce poptávek: `adam@vratasnabl.cz`
+- potvrzení po odeslání: `https://www.vratasnabl.cz/dekujeme.html`
+- spam ochrana: skryté pole `botcheck` a ochrana na straně Web3Forms
+- výhoda: funguje na statickém webu bez PHP a bez Forpsi subdomény
+
+## Alternativa do budoucna: Forpsi PHP endpoint
 
 Nejjednodušší vlastní řešení zdarma je použít PHP endpoint na webhostingu Forpsi a z webu na něj posílat formulářová data.
 

@@ -160,6 +160,13 @@ if (contactFormStartedAt) {
   contactFormStartedAt.value = String(Date.now());
 }
 
+const updateCurrentPageField = () => {
+  const pageUrlField = form?.querySelector("[name='page_url']");
+  if (pageUrlField) {
+    pageUrlField.value = window.location.href.split("#")[0];
+  }
+};
+
 const parseFormEndpoints = (value) => (value || "")
   .split(",")
   .map((endpoint) => endpoint.trim())
@@ -200,19 +207,32 @@ const sendFormPayload = async (endpoint, payload) => {
 
 if (form) {
   form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
     if (!form.checkValidity()) {
+      event.preventDefault();
       form.reportValidity();
       return;
     }
 
     const data = new FormData(form);
     const email = form.getAttribute("data-contact-email") || "adam@vratasnabl.cz";
+    const provider = form.getAttribute("data-form-provider") || "";
+    const isWeb3Forms = provider === "web3forms" || form.action.includes("api.web3forms.com");
     const endpoints = parseFormEndpoints(form.getAttribute("data-form-endpoint"));
     const service = data.get("service") || (isEnglish ? "service" : "servis");
 
-    if (data.get("_honey")) return;
+    if (data.get("_honey") || data.get("botcheck")) {
+      event.preventDefault();
+      return;
+    }
+
+    updateCurrentPageField();
+
+    if (isWeb3Forms) {
+      setFormStatus(text.sending);
+      return;
+    }
+
+    event.preventDefault();
 
     if (!endpoints.length) {
       setFormStatus(`${text.unavailable} ${text.failedFollowUp} ${email}.`);
