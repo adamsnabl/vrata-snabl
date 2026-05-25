@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, follow">
+    <title>Stránka nenalezena | Vrata Šnábl</title>
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <script>
+      (function () {
+        var path = decodeURIComponent(window.location.pathname).replace(/\/$/, "");
+        var redirects = {
+          "/kontakt": "/#kontakt",
+          "/nase-sluzby": "/#sluzby",
+          "/naše-služby": "/#sluzby"
+        };
+        if (redirects[path]) {
+          window.location.replace(redirects[path]);
+        }
+      }());
+    </script>
+  </head>
+  <body class="old-url-redirect">
+    <main class="old-url-card">
+      <h1>Stránka nenalezena</h1>
+      <p>Požadovaná stránka už nemusí existovat. Pokračujte na přehled služeb nebo rovnou zavolejte.</p>
+      <p>
+        <a class="btn btn-primary" href="/#sluzby">Zobrazit služby</a>
+        <a class="btn btn-secondary" href="tel:+420777286310">Zavolat 777&nbsp;286&nbsp;310</a>
+      </p>
+    </main>
+  </body>
+</html>

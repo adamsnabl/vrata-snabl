@@ -749,6 +749,20 @@ h3 {
   font-weight: 800;
 }
 
+.area-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.area-list a:hover,
+.area-list a:focus-visible {
+  color: #fff;
+}
+
 .keyword-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -785,6 +799,68 @@ h3 {
 
 .related-services {
   padding-top: 22px;
+}
+
+.issue-section {
+  padding-top: 20px;
+}
+
+.issue-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.issue-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 22px;
+  box-shadow: 0 10px 24px rgba(22, 32, 42, 0.04);
+}
+
+.issue-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.issue-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.old-url-redirect {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+  background: var(--bg);
+}
+
+.old-url-card {
+  width: min(560px, 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.old-url-card p {
+  color: var(--muted);
+}
+
+.old-url-card p:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.old-url-card .btn-secondary {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
 }
 
 .subpage-hero {
@@ -1248,6 +1324,7 @@ textarea:focus {
   .steps,
   .keyword-grid,
   .realization-grid,
+  .issue-grid,
   .service-photo-strip,
   .realization-proof {
     grid-template-columns: repeat(2, 1fr);
@@ -1342,6 +1419,7 @@ textarea:focus {
   .steps,
   .keyword-grid,
   .realization-grid,
+  .issue-grid,
   .service-photo-strip,
   .realization-proof,
   .contact-methods,
