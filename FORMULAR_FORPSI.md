@@ -15,7 +15,7 @@ Nejjednodušší vlastní řešení zdarma je použít PHP endpoint na webhostin
   - povolené originy jen pro `vratasnabl.cz`
 - Formulář na webu zkouší primárně endpoint:
   - `https://form.vratasnabl.cz/send.php`
-- Záložní automatické odeslání zůstává přes FormSubmit, dokud Forpsi endpoint není fyzicky dostupný.
+- Formulář používá vlastní endpoint na Forpsi. FormSubmit byl odstraněn jako provizorní třetí strana.
 - Web už zákazníkovi automaticky neotevírá e-mailovou aplikaci při chybě odeslání.
 
 ## Jak to zprovoznit na Forpsi
@@ -57,6 +57,35 @@ Tato varianta je také funkční, ale mění současné nasazení přes GitHub P
 - potvrzení, jestli použijeme subdoménu `form.vratasnabl.cz`
 - po nahrání endpointu ověřit, že testovací e-mail dorazil na `adam@vratasnabl.cz`
 
+## Doručitelnost e-mailů
+
+Pro ostrý provoz doporučuji zkontrolovat DNS záznamy domény `vratasnabl.cz`:
+
+- SPF: doména má povolit odesílání z Forpsi mail serverů.
+- DKIM: pokud Forpsi umožňuje DKIM pro schránku/doménu, zapnout ho.
+- DMARC: nastavit aspoň základní politiku, například monitoring.
+- `From`: endpoint posílá jako `Vrata Snabl <adam@vratasnabl.cz>`.
+- `Reply-To`: pokud zákazník vyplní e-mail, odpověď z pošty půjde zákazníkovi.
+
+Pokud by `mail()` na hostingu doručoval nespolehlivě, další krok je SMTP přes `smtp.forpsi.com`. SMTP heslo se ale nesmí ukládat do Gitu ani do JavaScriptu. Patří jen do neveřejného souboru na hostingu nebo do proměnných prostředí.
+
+## Rollback plán
+
+Kdyby formulář po nasazení nefungoval:
+
+1. Nejdřív ověřit `https://form.vratasnabl.cz/send.php`.
+2. Pokud endpoint vrací chybu nebo DNS nejde, web stále jasně doporučí telefon.
+3. Dočasně lze ve formuláři změnit text tak, aby primární akce byla telefon.
+4. V Gitu lze vrátit poslední commit s formulářem a pushnout předchozí verzi.
+5. Po opravě endpointu znovu poslat testovací poptávku a zkontrolovat doručení.
+
+## Monitoring bez osobních údajů
+
+- V GA4 sledovat `start_inquiry_submit`, `submit_inquiry` a `form_send_failed`.
+- Jednou týdně poslat krátkou testovací poptávku.
+- Nekopírovat obsah poptávek do veřejných logů.
+- Pokud by přibylo hodně `form_send_failed`, zkontrolovat Forpsi endpoint a DNS.
+
 ## Proč nestačí čistý statický web
 
 HTML formulář v prohlížeči neumí sám bezpečně odeslat e-mail bez serveru. Kdyby se SMTP heslo vložilo do JavaScriptu, bylo by veřejně viditelné. Proto je potřeba serverový endpoint, například PHP na Forpsi.
@@ -69,6 +98,7 @@ HTML formulář v prohlížeči neumí sám bezpečně odeslat e-mail bez server
 - zpráva obsahuje jméno, telefon, e-mail, lokalitu, typ služby a popis
 - GA4 měří událost `submit_inquiry`
 - v konzoli nejsou chyby
+- v GA4 nepředáváme jméno, telefon, e-mail ani text zprávy
 
 ## Užitečné odkazy Forpsi
 

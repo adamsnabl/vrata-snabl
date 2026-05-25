@@ -7,8 +7,6 @@ $thankYouUrl = 'https://www.vratasnabl.cz/dekujeme.html';
 $allowedOrigins = [
     'https://www.vratasnabl.cz',
     'https://vratasnabl.cz',
-    'http://127.0.0.1:4173',
-    'http://localhost:4173',
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
@@ -89,6 +87,18 @@ $field = static function (string $key, int $maxLength = 4000) use ($data): strin
     return substr($value, 0, $maxLength);
 };
 
+$headerValue = static function (string $value, int $maxLength = 180): string {
+    $value = trim($value);
+    $value = str_replace(["\r", "\n", "\0"], ' ', $value);
+    $value = preg_replace('/\s+/', ' ', $value) ?? $value;
+
+    if (function_exists('mb_substr')) {
+        return mb_substr($value, 0, $maxLength, 'UTF-8');
+    }
+
+    return substr($value, 0, $maxLength);
+};
+
 if ($field('_honey', 200) !== '') {
     respond(200, ['success' => true, 'message' => 'Ignored'], $expectsJson, $thankYouUrl);
 }
@@ -132,7 +142,7 @@ if ($currentCount >= 8) {
 
 $subject = 'Poptavka z webu Vrata Snabl';
 if ($service !== '') {
-    $subject .= ' - ' . $service;
+    $subject .= ' - ' . $headerValue($service, 90);
 }
 
 $lines = [
@@ -154,7 +164,7 @@ $lines = [
 
 $body = implode("\n", $lines);
 $from = 'Vrata Snabl <adam@vratasnabl.cz>';
-$replyTo = $email !== '' ? $email : $recipient;
+$replyTo = $email !== '' ? $headerValue($email, 180) : $recipient;
 $headers = [
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
@@ -163,7 +173,7 @@ $headers = [
     'X-Mailer: Vrata Snabl website form',
 ];
 
-$sent = mail($recipient, $subject, $body, implode("\r\n", $headers));
+$sent = mail($recipient, $subject, $body, implode("\n", $headers));
 
 if (!$sent) {
     respond(500, ['success' => false, 'message' => 'Mail could not be sent'], $expectsJson, $thankYouUrl);

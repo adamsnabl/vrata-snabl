@@ -191,7 +191,7 @@ const sendFormPayload = async (endpoint, payload) => {
 
     return {
       endpoint,
-      provider: endpoint.includes("formsubmit.co") ? "formsubmit" : "forpsi_php",
+      provider: "forpsi_php",
     };
   } finally {
     window.clearTimeout(timeout);
@@ -209,10 +209,7 @@ if (form) {
 
     const data = new FormData(form);
     const email = form.getAttribute("data-contact-email") || "adam@vratasnabl.cz";
-    const endpoints = [
-      ...parseFormEndpoints(form.getAttribute("data-form-endpoint")),
-      ...parseFormEndpoints(form.getAttribute("data-form-fallback-endpoint")),
-    ];
+    const endpoints = parseFormEndpoints(form.getAttribute("data-form-endpoint"));
     const service = data.get("service") || (isEnglish ? "service" : "servis");
 
     if (data.get("_honey")) return;
