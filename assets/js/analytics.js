@@ -95,6 +95,29 @@
 
   window.vrataSnablTrack = track;
 
+  const trackConversionPage = () => {
+    const conversionPage = document.body?.dataset.conversionPage || "";
+    if (conversionPage !== "inquiry-sent") return;
+
+    const sessionKey = `vrata_snabl_conversion_${conversionPage}_${window.location.pathname}`;
+    try {
+      if (window.sessionStorage.getItem(sessionKey)) return;
+      window.sessionStorage.setItem(sessionKey, "1");
+    } catch (error) {
+      // Session storage may be blocked; conversion tracking should still work.
+    }
+
+    track("submit_inquiry", {
+      form_id: "contact_form",
+      delivery: "web3forms",
+      source: "thank_you_page",
+    });
+    track("generate_lead", {
+      method: "contact_form",
+      delivery: "web3forms",
+    });
+  };
+
   const removeBanner = () => {
     document.querySelector("[data-cookie-banner]")?.remove();
   };
@@ -124,6 +147,7 @@
       saveConsent("granted");
       loadGoogleTag();
       track("analytics_consent_granted");
+      trackConversionPage();
       removeBanner();
     });
 
@@ -184,6 +208,7 @@
 
   if (consentGranted()) {
     loadGoogleTag();
+    trackConversionPage();
   } else if (!readConsent()) {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", showBanner, { once: true });
