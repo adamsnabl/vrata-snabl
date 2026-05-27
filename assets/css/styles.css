@@ -2449,13 +2449,52 @@ h1 {
 
 .realization-preview {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
+  align-items: start;
   gap: 18px;
   margin-top: 22px;
 }
 
+.realization-preview .realization-card,
+.realization-preview .realization-card:nth-child(1),
+.realization-preview .realization-card:nth-child(4) {
+  grid-column: auto;
+}
+
 .realization-preview .realization-card {
+  display: grid;
+  align-self: start;
+  min-height: 0;
   background: #101820;
+}
+
+.realization-preview .realization-card:nth-child(1) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.realization-preview .realization-card:nth-child(2) {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.realization-preview .realization-card:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.realization-preview .realization-card img,
+.realization-preview .realization-card:nth-child(1) img,
+.realization-preview .realization-card:nth-child(4) img {
+  aspect-ratio: 4 / 3;
+}
+
+.realization-preview .realization-card:nth-child(2) img {
+  aspect-ratio: 3 / 2;
+}
+
+.realization-preview .realization-card figcaption {
+  min-height: auto;
 }
 
 .lead-magnet {
@@ -2586,6 +2625,15 @@ h1 {
   .realization-preview,
   .form-trust {
     grid-template-columns: 1fr;
+  }
+
+  .realization-preview .realization-card,
+  .realization-preview .realization-card:nth-child(1),
+  .realization-preview .realization-card:nth-child(2),
+  .realization-preview .realization-card:nth-child(3),
+  .realization-preview .realization-card:nth-child(4) {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
 
