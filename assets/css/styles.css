@@ -2681,20 +2681,42 @@ h1 {
   }
 
   .mobile-cta {
-    top: 68px;
-    bottom: auto;
-    left: 0;
-    right: 0;
-    border-right: 0;
-    border-left: 0;
-    border-radius: 0;
-    padding: 7px 12px;
-    background: rgba(16, 24, 32, 0.96);
-    box-shadow: 0 14px 30px rgba(10, 16, 22, 0.22);
+    display: none;
   }
 
-  .mobile-cta a {
-    min-height: 42px;
+  .faq-list {
+    gap: 14px;
+  }
+
+  .faq-list details {
+    overflow: hidden;
+    padding: 0;
+    border-radius: 10px;
+  }
+
+  .faq-list summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    align-items: center;
+    gap: 14px;
+    min-height: 78px;
+    padding: 20px 18px;
+    font-size: clamp(20px, 5.8vw, 24px);
+    line-height: 1.18;
+  }
+
+  .faq-list summary::after {
+    justify-self: end;
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+
+  .faq-list p {
+    margin: 0;
+    padding: 0 18px 20px;
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   .cookie-consent {
@@ -2702,6 +2724,6 @@ h1 {
   }
 
   [id] {
-    scroll-margin-top: 128px;
+    scroll-margin-top: 84px;
   }
 }
