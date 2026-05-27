@@ -117,12 +117,16 @@ if (header) {
 const revealTargets = document.querySelectorAll([
   ".service-card",
   ".realization-card",
+  ".featured-case",
   ".case-card",
   ".step",
   ".issue-card",
+  ".lead-magnet__points div",
   ".proof-list div",
   ".faq-list details",
   ".contact-methods a",
+  ".form-trust span",
+  ".hero-proof-panel div",
   ".keyword-grid li",
 ].join(","));
 
