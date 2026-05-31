@@ -2727,3 +2727,70 @@ h1 {
     scroll-margin-top: 84px;
   }
 }
+
+/* Master final production polish */
+.review-proof + .review-proof {
+  margin-top: 14px;
+}
+
+.realization-preview {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+}
+
+.realization-preview .realization-card,
+.realization-preview .realization-card:nth-child(1),
+.realization-preview .realization-card:nth-child(2),
+.realization-preview .realization-card:nth-child(3),
+.realization-preview .realization-card:nth-child(4) {
+  grid-column: auto;
+  grid-row: auto;
+  align-self: stretch;
+}
+
+.realization-preview .realization-card {
+  grid-template-rows: auto 1fr;
+}
+
+.realization-preview .realization-card img,
+.realization-preview .realization-card:nth-child(1) img,
+.realization-preview .realization-card:nth-child(2) img,
+.realization-preview .realization-card:nth-child(3) img,
+.realization-preview .realization-card:nth-child(4) img {
+  aspect-ratio: 4 / 3;
+}
+
+.service-card p,
+.issue-card p,
+.proof-list span,
+.realization-card figcaption span,
+.case-card figcaption span,
+.lead-magnet__points span {
+  hyphens: none;
+}
+
+@media (max-width: 980px) {
+  .realization-preview {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .faq-list summary {
+    min-height: 66px;
+    padding: 16px;
+    font-size: clamp(18px, 4.8vw, 20px);
+    line-height: 1.22;
+  }
+
+  .faq-list summary::after {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+  }
+
+  .faq-list p {
+    padding: 0 16px 18px;
+  }
+}
