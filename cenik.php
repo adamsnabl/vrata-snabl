@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#16202a">
     <meta name="description" content="Tato starší adresa webu Vrata Šnábl byla nahrazena novou stránkou. Budete automaticky přesměrováni na aktuální obsah.">
     <meta http-equiv="refresh" content="0; url=/#kontakt">
-    <title>Kontakt | Vrata Šnábl</title>
+    <title>Ceník | Vrata Šnábl</title>
     <link rel="canonical" href="https://www.vratasnabl.cz/">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
@@ -18,8 +18,8 @@
   </head>
   <body class="old-url-redirect">
     <main class="old-url-card">
-      <h1>Kontakt Vrata Šnábl</h1>
-      <p>Kontakt na servis, montáž a vrata na míru najdete na hlavní stránce. Pokud se stránka nepřesměruje automaticky, pokračujte přes tlačítko.</p>
+      <h1>Ceník a poptávka</h1>
+      <p>Pokračujte na kontakt a domluvte konzultaci. Pokud se stránka nepřesměruje automaticky, pokračujte přes tlačítko.</p>
       <a class="btn btn-primary" href="/#kontakt">Pokračovat</a>
     </main>
   </body>

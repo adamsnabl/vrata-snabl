@@ -19,7 +19,7 @@
   <body class="old-url-redirect">
     <main class="old-url-card">
       <h1>Kontakt Vrata Šnábl</h1>
-      <p>Kontakt na servis, montáž a vrata na míru najdete na hlavní stránce. Pokud se stránka nepřesměruje automaticky, pokračujte přes tlačítko.</p>
+      <p>Pokračujte na aktuální kontakt. Pokud se stránka nepřesměruje automaticky, pokračujte přes tlačítko.</p>
       <a class="btn btn-primary" href="/#kontakt">Pokračovat</a>
     </main>
   </body>
