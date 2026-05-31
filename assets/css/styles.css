@@ -3151,4 +3151,20 @@ h1 {
   .principle-section__points span {
     width: 100%;
   }
+
+  .hero .hero-points {
+    align-items: stretch;
+  }
+
+  .hero .hero-points li,
+  .hero .hero-points li:first-child,
+  .hero .hero-points li:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 10px 12px;
+    text-align: center;
+    line-height: 1.15;
+  }
 }
