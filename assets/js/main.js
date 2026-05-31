@@ -209,6 +209,38 @@ const sendFormPayload = async (endpoint, payload) => {
   }
 };
 
+const sendWeb3FormsPayload = async (endpoint, formData) => {
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 10000);
+
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+      },
+      body: formData,
+      signal: controller.signal,
+    });
+
+    if (!response.ok) {
+      throw new Error(`Web3Forms returned ${response.status}`);
+    }
+
+    const result = await response.json().catch(() => ({}));
+    if (result.success === false || result.success === "false") {
+      throw new Error(result.message || "Web3Forms did not accept the message");
+    }
+
+    return {
+      endpoint,
+      provider: "web3forms",
+    };
+  } finally {
+    window.clearTimeout(timeout);
+  }
+};
+
 if (form) {
   form.addEventListener("submit", async (event) => {
     if (!form.checkValidity()) {
@@ -231,14 +263,9 @@ if (form) {
 
     updateCurrentPageField();
 
-    if (isWeb3Forms) {
-      setFormStatus(text.sending);
-      return;
-    }
-
     event.preventDefault();
 
-    if (!endpoints.length) {
+    if (!isWeb3Forms && !endpoints.length) {
       setFormStatus(`${text.unavailable} ${text.failedFollowUp} ${email}.`);
       return;
     }
@@ -264,12 +291,20 @@ if (form) {
       let deliveryResult = null;
       let lastError = null;
 
-      for (const endpoint of endpoints) {
+      if (isWeb3Forms) {
         try {
-          deliveryResult = await sendFormPayload(endpoint, payload);
-          break;
+          deliveryResult = await sendWeb3FormsPayload(form.action, new FormData(form));
         } catch (error) {
           lastError = error;
+        }
+      } else {
+        for (const endpoint of endpoints) {
+          try {
+            deliveryResult = await sendFormPayload(endpoint, payload);
+            break;
+          } catch (error) {
+            lastError = error;
+          }
         }
       }
 
@@ -291,6 +326,13 @@ if (form) {
         window.vrataSnablTrack("generate_lead", {
           method: "contact_form",
         });
+      }
+
+      const redirectUrl = data.get("redirect");
+      if (deliveryResult.provider === "web3forms" && redirectUrl) {
+        window.setTimeout(() => {
+          window.location.assign(String(redirectUrl));
+        }, 250);
       }
     } catch (error) {
       if (typeof window.vrataSnablTrack === "function") {
