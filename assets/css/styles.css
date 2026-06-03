@@ -3307,3 +3307,16 @@ h1 {
     line-height: 1.15;
   }
 }
+
+.subpage-hero .subpage-trust {
+  margin-top: 24px;
+}
+
+.subpage-hero .subpage-trust li,
+.subpage-hero .subpage-trust li:first-child,
+.subpage-hero .subpage-trust li:last-child {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted);
+}
