@@ -162,11 +162,15 @@
     const text = (link.textContent || "").toLowerCase();
 
     if (href.startsWith("tel:")) return "click_phone";
-    if (href.startsWith("mailto:")) return "click_email";
+    if (href.startsWith("mailto:")) {
+      return /fotk|photo/.test(text.normalize("NFD").replace(/[\u0300-\u036f]/g, "")) ? "click_send_photo" : "click_email";
+    }
     if (/wa\.me|whatsapp/i.test(href)) return "click_whatsapp";
     if (/maps\.app\.goo\.gl|google\.com\/maps/i.test(href)) {
       return /profil|profile|recenze|reviews?/.test(text) ? "click_google_profile" : "click_map";
     }
+    if (/realizace|projects/.test(href)) return "click_projects";
+    if (/servis|service|vrata-na-miru|custom-made|montaz|installation|pohonu|operator/.test(href)) return "click_service_page";
     if (/#(?:kontakt|contact)$/.test(href) && /poptav|kontakt|inquiry|contact/.test(text.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) {
       return "click_inquiry_cta";
     }
@@ -197,6 +201,47 @@
       inquiry_type: form.querySelector("[name='service']")?.value || "",
     });
   }, true);
+
+  const trackedScrollDepths = new Set();
+  const trackScrollDepth = () => {
+    const pageHeight = Math.max(
+      document.documentElement.scrollHeight,
+      document.body?.scrollHeight || 0
+    ) - window.innerHeight;
+    if (pageHeight <= 0) return;
+
+    const depth = Math.round((window.scrollY / pageHeight) * 100);
+    [25, 50, 75, 90].forEach((threshold) => {
+      if (depth >= threshold && !trackedScrollDepths.has(threshold)) {
+        trackedScrollDepths.add(threshold);
+        track("scroll_depth", { percent_scrolled: threshold });
+      }
+    });
+  };
+
+  window.addEventListener("scroll", trackScrollDepth, { passive: true });
+  trackScrollDepth();
+
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const section = entry.target;
+        const sectionId = section.id || section.getAttribute("aria-labelledby") || "unnamed_section";
+        track("view_key_section", {
+          section_id: sectionId,
+          section_label: section.querySelector("h1, h2")?.textContent?.replace(/\s+/g, " ").trim().slice(0, 120) || "",
+        });
+        observer.unobserve(section);
+      });
+    }, {
+      threshold: 0.45,
+    });
+
+    document.querySelectorAll("#realizace, #lokality, #faq, #kontakt, .review-section, .price-factors").forEach((section) => {
+      sectionObserver.observe(section);
+    });
+  }
 
   document.addEventListener("click", (event) => {
     const button = event.target instanceof Element ? event.target.closest("[data-cookie-settings]") : null;

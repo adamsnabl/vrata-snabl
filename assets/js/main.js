@@ -128,6 +128,8 @@ const revealTargets = document.querySelectorAll([
   ".form-trust span",
   ".hero-proof-panel div",
   ".keyword-grid li",
+  ".review-card",
+  ".price-factor-grid article",
 ].join(","));
 
 if (revealTargets.length && !reduceMotion.matches) {
@@ -346,4 +348,30 @@ if (form) {
       if (formSubmitButton) formSubmitButton.disabled = false;
     }
   });
+}
+
+const createMobileStickyCta = () => {
+  if (document.querySelector("[data-mobile-sticky-cta]")) return;
+
+  const phoneHref = "tel:+420777286310";
+  const contactHref = isEnglish ? "#contact" : "#kontakt";
+  const callText = isEnglish ? "Call" : "Zavolat";
+  const inquiryText = isEnglish ? "Inquiry" : "Poptávka";
+
+  const stickyCta = document.createElement("nav");
+  stickyCta.className = "mobile-sticky-cta";
+  stickyCta.setAttribute("data-mobile-sticky-cta", "");
+  stickyCta.setAttribute("aria-label", isEnglish ? "Quick contact" : "Rychlý kontakt");
+  stickyCta.innerHTML = `
+    <a href="${phoneHref}">${callText}</a>
+    <a href="${contactHref}">${inquiryText}</a>
+  `;
+
+  document.body.appendChild(stickyCta);
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", createMobileStickyCta, { once: true });
+} else {
+  createMobileStickyCta();
 }
