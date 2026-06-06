@@ -457,7 +457,7 @@ h3 {
 .section {
   width: min(1180px, calc(100% - 36px));
   margin: 0 auto;
-  padding: 92px 0;
+  padding: 78px 0;
 }
 
 .section-heading {
@@ -724,7 +724,7 @@ h3 {
 }
 
 .case-section {
-  padding-top: 18px;
+  padding-top: 8px;
 }
 
 .case-grid {
@@ -1020,7 +1020,7 @@ h3 {
 }
 
 .issue-section {
-  padding-top: 20px;
+  padding-top: 8px;
 }
 
 .issue-grid {
@@ -1091,7 +1091,7 @@ h3 {
 .subpage-hero {
   width: min(1180px, calc(100% - 36px));
   margin: 0 auto;
-  padding: 86px 0 62px;
+  padding: 76px 0 48px;
 }
 
 .subpage-hero h1 {
@@ -1122,6 +1122,11 @@ h3 {
   border-radius: var(--radius);
   background: var(--surface);
   padding: 28px;
+}
+
+.content-panel h2 {
+  font-size: clamp(27px, 3vw, 39px);
+  line-height: 1.08;
 }
 
 .content-panel p {
@@ -1434,14 +1439,14 @@ textarea:focus {
   z-index: 40;
   display: grid;
   grid-template-columns: minmax(260px, 1fr) auto;
-  gap: 18px;
+  gap: 16px;
   align-items: center;
-  width: min(660px, calc(100% - 36px));
+  width: min(720px, calc(100% - 36px));
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow);
-  padding: 18px;
+  padding: 16px;
 }
 
 .cookie-consent strong,
@@ -1453,7 +1458,8 @@ textarea:focus {
 .cookie-consent p {
   margin-top: 6px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13.5px;
+  line-height: 1.42;
 }
 
 .cookie-consent a {
@@ -1467,9 +1473,15 @@ textarea:focus {
 
 .cookie-consent__actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 10px;
   justify-content: flex-end;
+}
+
+.cookie-consent .btn {
+  min-height: 48px;
+  padding: 11px 16px;
+  white-space: nowrap;
 }
 
 .cookie-consent .btn-secondary {
@@ -2062,7 +2074,7 @@ h1 {
 }
 
 .section {
-  padding: 112px 0;
+  padding: 92px 0;
 }
 
 .section-heading {
@@ -2180,8 +2192,23 @@ h1 {
 
 .split-section,
 .contact-section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 104px;
+  padding-bottom: 104px;
+}
+
+.subpage-hero + .content-grid {
+  padding-top: 56px;
+}
+
+.case-section,
+.issue-section,
+.related-services {
+  padding-top: 36px;
+}
+
+.local-proof {
+  padding-top: 0;
+  padding-bottom: 56px;
 }
 
 .location-band {
@@ -2313,37 +2340,37 @@ h1 {
     left: 12px;
     right: 12px;
     width: auto;
-    gap: 12px;
-    padding: 14px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 10px;
     border-radius: 12px;
   }
 
   .cookie-consent strong {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.2;
   }
 
   .cookie-consent p {
-    margin-top: 4px;
-    font-size: 12.5px;
-    line-height: 1.35;
+    display: none;
   }
 
   .cookie-consent a {
-    margin-top: 6px;
-    font-size: 13px;
+    margin-top: 4px;
+    font-size: 12px;
   }
 
   .cookie-consent__actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .cookie-consent .btn {
     width: auto;
-    min-height: 44px;
-    padding: 10px 12px;
-    font-size: 14px;
+    min-height: 36px;
+    padding: 7px 10px;
+    font-size: 12.5px;
   }
 }
 
@@ -2941,7 +2968,7 @@ h1 {
   }
 
   .cookie-consent {
-    bottom: calc(12px + env(safe-area-inset-bottom));
+    bottom: calc(6px + env(safe-area-inset-bottom));
   }
 
   [id] {

@@ -7,8 +7,8 @@
   const copy = isEnglish ? {
     inactive: "Analytics is not active yet. Once the GA4 measurement ID is set, cookie settings can be changed here.",
     bannerLabel: "Analytical cookie settings",
-    title: "Help us improve the website",
-    text: "We use Google Analytics only after your consent. We measure visits and clicks on phone, e-mail, map and inquiry actions. Form message text is not sent to analytics.",
+    title: "Website analytics",
+    text: "Analytics runs only after consent. It helps measure visits and contact clicks.",
     privacy: "Privacy and cookies",
     privacyHref: "privacy-cookies.html",
     deny: "Decline",
@@ -16,8 +16,8 @@
   } : {
     inactive: "Analytika zatím není aktivní. Jakmile bude doplněné GA4 měřicí ID, půjde zde upravit souhlas s měřením.",
     bannerLabel: "Nastavení analytických cookies",
-    title: "Pomozte nám zlepšovat web",
-    text: "Používáme Google Analytics pouze po vašem souhlasu. Měříme návštěvnost a kliknutí na telefon, e-mail, mapu a poptávku. Texty z formuláře neodesíláme do analytiky.",
+    title: "Analytika webu",
+    text: "Analytiku spustíme jen po vašem souhlasu. Pomáhá měřit návštěvnost a kliknutí na kontakt.",
     privacy: "Soukromí a cookies",
     privacyHref: "ochrana-osobnich-udaju.html",
     deny: "Odmítnout",
