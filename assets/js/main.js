@@ -267,7 +267,7 @@ if (form) {
       _subject: data.get("_subject") || `${text.subjectPrefix} - ${service}`,
       _template: data.get("_template") || "table",
       _captcha: data.get("_captcha") || "false",
-      submitted_from: `${window.location.origin}${window.location.pathname}${isEnglish ? "#contact" : "#kontakt"}`,
+      submitted_from: `${window.location.origin}${window.location.pathname}${isEnglish ? "#inquiry-form" : "#poptavka"}`,
       name: data.get("name") || "",
       phone: data.get("phone") || "",
       email: data.get("email") || "",
@@ -345,7 +345,10 @@ const createMobileStickyCta = () => {
   if (document.querySelector("[data-mobile-sticky-cta]")) return;
 
   const phoneHref = "tel:+420777286310";
-  const contactHref = isEnglish ? "#contact" : "#kontakt";
+  const inquiryAnchor = isEnglish ? "#inquiry-form" : "#poptavka";
+  const contactHref = document.querySelector(inquiryAnchor)
+    ? inquiryAnchor
+    : (isEnglish ? "/en/#inquiry-form" : "/#poptavka");
   const callText = isEnglish ? "Call" : "Zavolat";
   const inquiryText = isEnglish ? "Inquiry" : "Poptávka";
   const callHint = isEnglish ? "fastest for service" : "nejrychlejší servis";
@@ -363,8 +366,40 @@ const createMobileStickyCta = () => {
   document.body.appendChild(stickyCta);
 };
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", createMobileStickyCta, { once: true });
-} else {
+const setupStickyCtaVisibility = () => {
+  const targets = document.querySelectorAll(".contact-section, .site-footer");
+
+  if (!targets.length || !("IntersectionObserver" in window)) return;
+
+  const visibleTargets = new Set();
+  const syncState = () => {
+    document.body.classList.toggle("sticky-cta-suppressed", visibleTargets.size > 0);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        visibleTargets.add(entry.target);
+      } else {
+        visibleTargets.delete(entry.target);
+      }
+    });
+    syncState();
+  }, {
+    rootMargin: "0px 0px -24% 0px",
+    threshold: 0.12,
+  });
+
+  targets.forEach((target) => observer.observe(target));
+};
+
+const setupMobileStickyCta = () => {
   createMobileStickyCta();
+  setupStickyCtaVisibility();
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", setupMobileStickyCta, { once: true });
+} else {
+  setupMobileStickyCta();
 }

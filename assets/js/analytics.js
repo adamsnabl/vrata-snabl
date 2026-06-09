@@ -120,10 +120,12 @@
 
   const removeBanner = () => {
     document.querySelector("[data-cookie-banner]")?.remove();
+    document.body.classList.remove("cookie-open");
   };
 
   const showBanner = () => {
     removeBanner();
+    document.body.classList.add("cookie-open");
 
     const banner = document.createElement("section");
     banner.className = "cookie-consent";
