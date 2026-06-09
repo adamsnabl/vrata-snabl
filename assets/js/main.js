@@ -343,6 +343,7 @@ if (form) {
 
 const createMobileStickyCta = () => {
   if (document.querySelector("[data-mobile-sticky-cta]")) return;
+  if (document.body.dataset.conversionPage === "inquiry-sent") return;
 
   const phoneHref = "tel:+420777286310";
   const inquiryAnchor = isEnglish ? "#inquiry-form" : "#poptavka";
@@ -367,6 +368,24 @@ const createMobileStickyCta = () => {
 };
 
 const setupStickyCtaVisibility = () => {
+  const stickyCta = document.querySelector("[data-mobile-sticky-cta]");
+  if (!stickyCta) return;
+
+  let scrollTicking = false;
+  const syncScrollState = () => {
+    const threshold = Math.min(360, window.innerHeight * 0.45);
+    document.body.classList.toggle("sticky-cta-before-scroll", window.scrollY < threshold);
+    scrollTicking = false;
+  };
+
+  syncScrollState();
+  window.addEventListener("scroll", () => {
+    if (!scrollTicking) {
+      scrollTicking = true;
+      window.requestAnimationFrame(syncScrollState);
+    }
+  }, { passive: true });
+
   const targets = document.querySelectorAll(".contact-section, .site-footer");
 
   if (!targets.length || !("IntersectionObserver" in window)) return;
@@ -394,6 +413,8 @@ const setupStickyCtaVisibility = () => {
 };
 
 const setupMobileStickyCta = () => {
+  const threshold = Math.min(360, window.innerHeight * 0.45);
+  document.body.classList.toggle("sticky-cta-before-scroll", window.scrollY < threshold);
   createMobileStickyCta();
   setupStickyCtaVisibility();
 };
