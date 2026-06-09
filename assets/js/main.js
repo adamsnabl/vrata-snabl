@@ -348,14 +348,16 @@ const createMobileStickyCta = () => {
   const contactHref = isEnglish ? "#contact" : "#kontakt";
   const callText = isEnglish ? "Call" : "Zavolat";
   const inquiryText = isEnglish ? "Inquiry" : "Poptávka";
+  const callHint = isEnglish ? "fastest for service" : "nejrychlejší servis";
+  const inquiryHint = isEnglish ? "photo and location" : "fotka a lokalita";
 
   const stickyCta = document.createElement("nav");
   stickyCta.className = "mobile-sticky-cta";
   stickyCta.setAttribute("data-mobile-sticky-cta", "");
   stickyCta.setAttribute("aria-label", isEnglish ? "Quick contact" : "Rychlý kontakt");
   stickyCta.innerHTML = `
-    <a href="${phoneHref}">${callText}</a>
-    <a href="${contactHref}">${inquiryText}</a>
+    <a href="${phoneHref}"><span>${callText}</span> <small>${callHint}</small></a>
+    <a href="${contactHref}"><span>${inquiryText}</span> <small>${inquiryHint}</small></a>
   `;
 
   document.body.appendChild(stickyCta);
