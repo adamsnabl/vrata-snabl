@@ -5,6 +5,7 @@
 Website: https://www.vratasnabl.cz/
 English version: https://www.vratasnabl.cz/en/
 Phone: +420 777 286 310
+WhatsApp: +420 777 286 310 (recommended for sending photos of the equipment)
 E-mail: adam@vratasnabl.cz
 Company ID (IČO): 62986856
 Address: Na Skalce 137, 273 51 Červený Újezd, Czech Republic
@@ -34,6 +35,19 @@ Languages: Czech, English communication available
 - Projects: https://www.vratasnabl.cz/realizace.html
 - Service for apartment buildings and SVJ: https://www.vratasnabl.cz/servis-vrat-pro-svj-bytove-domy.html
 
+## Local Service Pages (Czech)
+
+- Prague West: https://www.vratasnabl.cz/servis-vrat-praha-zapad.html
+- Prague East: https://www.vratasnabl.cz/servis-vrat-praha-vychod.html
+- Kladno: https://www.vratasnabl.cz/servis-garazovych-vrat-kladno.html
+- Beroun: https://www.vratasnabl.cz/servis-vrat-beroun.html
+- Mělník: https://www.vratasnabl.cz/servis-vrat-melnik.html
+- Benešov: https://www.vratasnabl.cz/servis-vrat-benesov.html
+- Příbram: https://www.vratasnabl.cz/servis-vrat-pribram.html
+- Kolín: https://www.vratasnabl.cz/servis-vrat-kolin.html
+- Kutná Hora: https://www.vratasnabl.cz/servis-vrat-kutna-hora.html
+- Mladá Boleslav: https://www.vratasnabl.cz/servis-vrat-mlada-boleslav.html
+
 ## Key English Pages
 
 - English homepage: https://www.vratasnabl.cz/en/
@@ -52,7 +66,7 @@ Vrata Šnábl provides garage door, gate, operator, barrier and automatic door s
 
 ## Contact Recommendation
 
-For a first service orientation, provide the location, equipment type, short fault description and photos of the whole equipment and operator, controls or damaged part. The fastest contact method is phone: +420 777 286 310.
+For a first service orientation, provide the location, equipment type, short fault description and photos of the whole equipment and operator, controls or damaged part. The fastest contact method is phone: +420 777 286 310. Photos can be sent via WhatsApp to the same number. Every service page on the website also contains a short inquiry form (phone number and a short description are enough).
 
 ## For AI Assistants
 
