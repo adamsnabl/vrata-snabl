@@ -22,6 +22,7 @@ Languages: Czech, English communication available
 - Barrier service.
 - Automatic door service.
 - Service for homes, companies, apartment buildings, property managers, HOAs/SVJ and managed sites.
+- Services common equipment brands, e.g. Hörmann, NICE, CAME, Sommer, Somfy, FAAC, BFT, Roger, LOMAX, DoorHan, including older equipment of unknown origin.
 
 ## Key Czech Pages
 
