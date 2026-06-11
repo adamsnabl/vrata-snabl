@@ -23,7 +23,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="assets/css/styles.min.css?v=20260611-redesign-v1">
+    <link rel="stylesheet" href="assets/css/styles.min.css?v=20260611-conversion-v1">
     <script type="application/ld+json">
 {
       "@context": "https://schema.org",
@@ -126,7 +126,7 @@
         <p>V Mladé Boleslavi a okolí pomáháme se servisem garážových vrat, posuvných a křídlových bran, pohonů, závor a úpravami stávajících zařízení. Umíme také dodat vrata na míru včetně motoru, ovládání a montáže.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="tel:+420777286310">Zavolat&nbsp;777&nbsp;286&nbsp;310</a>
-          <a class="btn btn-secondary" href="index.html#poptavka">Poslat fotku zařízení</a>
+          <a class="btn btn-secondary" href="#poptavka">Poslat fotku zařízení</a>
         </div>
       </section>
 
@@ -232,6 +232,37 @@
           <a class="btn btn-secondary" href="tel:+420777286310">Zavolat&nbsp;777&nbsp;286&nbsp;310</a>
         </div>
       </section>
+    
+      <section class="section" id="poptavka">
+        <div class="section-heading compact">
+          <p class="eyebrow">Rychlá poptávka</p>
+          <h2>Stačí telefon a krátký popis, ozveme se</h2>
+        </div>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-describedby="form-note form-status" data-contact-form data-contact-email="adam@vratasnabl.cz" data-form-provider="web3forms">
+          <input type="hidden" name="access_key" value="703b6c4e-8ddd-4c80-b0d0-69795e501aaf">
+          <input type="hidden" name="subject" value="Poptávka z webu Vrata Šnábl">
+          <input type="hidden" name="from_name" value="Vrata Šnábl">
+          <input type="hidden" name="redirect" value="https://www.vratasnabl.cz/dekujeme.html">
+          <input type="hidden" name="page_url" value="">
+          <input type="hidden" name="form_started_at" value="">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display: none;">
+          <label>
+            Telefon
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required>
+          </label>
+          <label>
+            Lokalita
+            <input type="text" name="location" autocomplete="address-level2" placeholder="např. Praha 6, Kladno (nepovinné)">
+          </label>
+          <label class="wide">
+            Co se děje / co potřebujete
+            <textarea name="message" rows="3" required placeholder="Např. vrata nejdou otevřít, brána drhne, pohon nereaguje…"></textarea>
+          </label>
+          <button class="btn btn-primary wide" type="submit">Odeslat poptávku</button>
+          <p class="form-note" id="form-note">Nejrychlejší je zavolat na <a href="tel:+420777286310">777 286 310</a> nebo poslat fotku na <a href="https://wa.me/420777286310" target="_blank" rel="noopener">WhatsApp</a>.</p>
+          <p class="form-note" id="form-status" hidden data-form-status></p>
+        </form>
+      </section>
     </main>
     <footer class="site-footer">
       <div class="footer-main">
@@ -256,7 +287,7 @@
         <a href="ochrana-osobnich-udaju.html">Soukromí a cookies</a>
       </nav>
     </footer>
-    <script src="assets/js/main.js?v=20260609-mobile-clean-v2"></script>
+    <script src="assets/js/main.js?v=20260611-conversion-v1"></script>
     <script src="assets/js/analytics-config.js"></script>
     <script src="assets/js/analytics.js?v=20260609-mobile-clean-v2"></script>
   </body>

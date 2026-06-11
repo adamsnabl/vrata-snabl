@@ -346,14 +346,13 @@ const createMobileStickyCta = () => {
   if (document.body.dataset.conversionPage === "inquiry-sent") return;
 
   const phoneHref = "tel:+420777286310";
-  const inquiryAnchor = isEnglish ? "#inquiry-form" : "#poptavka";
-  const contactHref = document.querySelector(inquiryAnchor)
-    ? inquiryAnchor
-    : (isEnglish ? "/en/#inquiry-form" : "/#poptavka");
+  const whatsappHref = isEnglish
+    ? "https://wa.me/420777286310?text=Hello%2C%20I%20need%20help%20with%20a%20garage%20door%20or%20gate.%20Sending%20a%20photo%20of%20the%20equipment."
+    : "https://wa.me/420777286310?text=Dobr%C3%BD%20den%2C%20pot%C5%99ebuji%20poradit%20s%20vraty%2Fbr%C3%A1nou.%20Pos%C3%ADl%C3%A1m%20fotku%20za%C5%99%C3%ADzen%C3%AD.";
   const callText = isEnglish ? "Call" : "Zavolat";
-  const inquiryText = isEnglish ? "Inquiry" : "Poptávka";
+  const whatsappText = "WhatsApp";
   const callHint = isEnglish ? "fastest for service" : "nejrychlejší servis";
-  const inquiryHint = isEnglish ? "photo and location" : "fotka a lokalita";
+  const whatsappHint = isEnglish ? "send a photo" : "pošlete fotku";
 
   const stickyCta = document.createElement("nav");
   stickyCta.className = "mobile-sticky-cta";
@@ -361,7 +360,7 @@ const createMobileStickyCta = () => {
   stickyCta.setAttribute("aria-label", isEnglish ? "Quick contact" : "Rychlý kontakt");
   stickyCta.innerHTML = `
     <a href="${phoneHref}"><span>${callText}</span> <small>${callHint}</small></a>
-    <a href="${contactHref}"><span>${inquiryText}</span> <small>${inquiryHint}</small></a>
+    <a href="${whatsappHref}" target="_blank" rel="noopener" class="sticky-whatsapp"><span>${whatsappText}</span> <small>${whatsappHint}</small></a>
   `;
 
   document.body.appendChild(stickyCta);
