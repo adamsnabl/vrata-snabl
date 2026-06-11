@@ -32,6 +32,9 @@ Languages: Czech, English communication available
 - Gate operator service: https://www.vratasnabl.cz/servis-pohonu-brany.html
 - Gate motor installation: https://www.vratasnabl.cz/montaz-pohonu-brany.html
 - Custom-made doors: https://www.vratasnabl.cz/vrata-na-miru.html
+- Sliding gates (self-supporting and on rail): https://www.vratasnabl.cz/posuvne-brany.html
+- Double-wing gates: https://www.vratasnabl.cz/dvoukridle-brany.html
+- Sectional garage doors: https://www.vratasnabl.cz/sekcni-garazova-vrata.html
 - Barriers and automatic doors: https://www.vratasnabl.cz/servis-zavor-automatickych-dveri.html
 - Projects: https://www.vratasnabl.cz/realizace.html
 - Service for apartment buildings and SVJ: https://www.vratasnabl.cz/servis-vrat-pro-svj-bytove-domy.html

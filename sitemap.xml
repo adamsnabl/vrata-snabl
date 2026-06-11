@@ -413,4 +413,25 @@
     <lastmod>2026-06-09</lastmod>
     <priority>0.62</priority>
   </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/posuvne-brany.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/posuvne-brany.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/posuvne-brany.html" />
+    <lastmod>2026-06-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/dvoukridle-brany.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/dvoukridle-brany.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/dvoukridle-brany.html" />
+    <lastmod>2026-06-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/sekcni-garazova-vrata.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/sekcni-garazova-vrata.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/sekcni-garazova-vrata.html" />
+    <lastmod>2026-06-11</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>
