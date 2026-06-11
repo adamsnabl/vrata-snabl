@@ -3093,11 +3093,16 @@ body[data-conversion-page="inquiry-sent"] .mobile-sticky-cta {
   }
 
   body {
-    padding-bottom: calc(78px + env(safe-area-inset-bottom));
+    padding-bottom: 0;
   }
 
-  body[data-conversion-page="inquiry-sent"] {
-    padding-bottom: 0;
+  /* rezerva pro sticky CTA lištu uvnitř tmavé patičky, ať pod ní nesvítí podklad */
+  .site-footer {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
+  }
+
+  body[data-conversion-page="inquiry-sent"] .site-footer {
+    padding-bottom: 28px;
   }
 
   .mobile-sticky-cta {
