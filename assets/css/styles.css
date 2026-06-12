@@ -2995,6 +2995,21 @@ textarea:focus {
   font-weight: 700;
 }
 
+/* větší dotyková plocha odkazů bez vlivu na layout */
+.footer-contact dd a,
+.form-note a {
+  display: inline-block;
+  padding: 12px 4px;
+  margin: -12px -4px;
+}
+
+.form-note a {
+  color: var(--accent-text);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .site-footer nav {
   display: flex;
   flex-wrap: wrap;
@@ -3009,7 +3024,10 @@ textarea:focus {
 }
 
 .site-footer nav a {
-  padding: 7px 10px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 7px 12px;
   border-radius: 7px;
   transition: color 150ms ease, background 150ms ease;
 }
