@@ -15,6 +15,7 @@ Languages: Czech, English communication available
 ## What Vrata Šnábl Does
 
 - Garage door service, adjustment and repair.
+- Emergency/problem-led garage door and gate service for cases where doors or gates do not open or close.
 - Sliding and swing gate service.
 - Garage door operator and gate motor repair.
 - Gate operator installation.
@@ -28,6 +29,8 @@ Languages: Czech, English communication available
 
 - Homepage: https://www.vratasnabl.cz/
 - Garage door service Prague: https://www.vratasnabl.cz/servis-garazovych-vrat-praha.html
+- Emergency door/gate service: https://www.vratasnabl.cz/vrata-nejdou-otevrit-nouzovy-servis.html
+- Garage door operator installation: https://www.vratasnabl.cz/pohon-na-garazova-vrata-montaz.html
 - Gate service Prague: https://www.vratasnabl.cz/servis-bran-praha.html
 - Gate operator service: https://www.vratasnabl.cz/servis-pohonu-brany.html
 - Gate motor installation: https://www.vratasnabl.cz/montaz-pohonu-brany.html
@@ -51,6 +54,27 @@ Languages: Czech, English communication available
 - Kolín: https://www.vratasnabl.cz/servis-vrat-kolin.html
 - Kutná Hora: https://www.vratasnabl.cz/servis-vrat-kutna-hora.html
 - Mladá Boleslav: https://www.vratasnabl.cz/servis-vrat-mlada-boleslav.html
+- Nearby villages around Červený Újezd:
+  - Červený Újezd: https://www.vratasnabl.cz/servis-vrat-cerveny-ujezd.html
+  - Unhošť: https://www.vratasnabl.cz/servis-vrat-unhost.html
+  - Pavlov: https://www.vratasnabl.cz/servis-vrat-pavlov.html
+  - Ptice: https://www.vratasnabl.cz/servis-vrat-ptice.html
+  - Úhonice: https://www.vratasnabl.cz/servis-vrat-uhonice.html
+  - Jeneč: https://www.vratasnabl.cz/servis-vrat-jenec.html
+  - Chýně: https://www.vratasnabl.cz/servis-vrat-chyne.html
+  - Hostivice: https://www.vratasnabl.cz/servis-vrat-hostivice.html
+  - Rudná: https://www.vratasnabl.cz/servis-vrat-rudna.html
+  - Nučice: https://www.vratasnabl.cz/servis-vrat-nucice.html
+  - Tachlovice: https://www.vratasnabl.cz/servis-vrat-tachlovice.html
+  - Drahelčice: https://www.vratasnabl.cz/servis-vrat-drahelcice.html
+  - Zbuzany: https://www.vratasnabl.cz/servis-vrat-zbuzany.html
+  - Chrášťany: https://www.vratasnabl.cz/servis-vrat-chrastany.html
+  - Tuchoměřice: https://www.vratasnabl.cz/servis-vrat-tuchomerice.html
+  - Kněževes: https://www.vratasnabl.cz/servis-vrat-knezeves.html
+  - Dobrovíz: https://www.vratasnabl.cz/servis-vrat-dobroviz.html
+  - Hostouň: https://www.vratasnabl.cz/servis-vrat-hostoun.html
+  - Středokluky: https://www.vratasnabl.cz/servis-vrat-stredokluky.html
+  - Braškov: https://www.vratasnabl.cz/servis-vrat-braskov.html
 
 ## Key English Pages
 

@@ -5,7 +5,7 @@
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.vratasnabl.cz/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/" />
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -21,7 +21,7 @@
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-garazovych-vrat-praha.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.vratasnabl.cz/en/garage-door-service-prague.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-garazovych-vrat-praha.html" />
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -69,7 +69,7 @@
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-posuvnych-bran.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.vratasnabl.cz/en/sliding-gate-service.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-posuvnych-bran.html" />
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <priority>0.86</priority>
   </url>
   <url>
@@ -85,7 +85,7 @@
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-kridlovych-bran.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.vratasnabl.cz/en/swing-gate-service.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-kridlovych-bran.html" />
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <priority>0.86</priority>
   </url>
   <url>
@@ -133,7 +133,7 @@
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/oprava-pohonu-garazovych-vrat.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.vratasnabl.cz/en/garage-door-operator-repair.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/oprava-pohonu-garazovych-vrat.html" />
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <priority>0.84</priority>
   </url>
   <url>
@@ -149,7 +149,7 @@
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/vrata-na-miru.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.vratasnabl.cz/en/custom-made-doors.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/vrata-na-miru.html" />
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <priority>0.88</priority>
   </url>
   <url>
@@ -244,7 +244,7 @@
     <loc>https://www.vratasnabl.cz/servis-vrat-praha-zapad.html</loc>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-praha-zapad.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-praha-zapad.html" />
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <priority>0.78</priority>
   </url>
   <url>
@@ -433,5 +433,159 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/sekcni-garazova-vrata.html" />
     <lastmod>2026-06-11</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/vrata-nejdou-otevrit-nouzovy-servis.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/vrata-nejdou-otevrit-nouzovy-servis.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/vrata-nejdou-otevrit-nouzovy-servis.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/pohon-na-garazova-vrata-montaz.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/pohon-na-garazova-vrata-montaz.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/pohon-na-garazova-vrata-montaz.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.84</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-cerveny-ujezd.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-cerveny-ujezd.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-cerveny-ujezd.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.86</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-unhost.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-unhost.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-unhost.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.84</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-pavlov.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-pavlov.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-pavlov.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-ptice.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-ptice.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-ptice.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-uhonice.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-uhonice.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-uhonice.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-jenec.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-jenec.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-jenec.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-chyne.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-chyne.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-chyne.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-hostivice.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-hostivice.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-hostivice.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.84</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-rudna.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-rudna.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-rudna.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.84</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-nucice.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-nucice.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-nucice.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-tachlovice.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-tachlovice.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-tachlovice.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-drahelcice.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-drahelcice.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-drahelcice.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-zbuzany.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-zbuzany.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-zbuzany.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-chrastany.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-chrastany.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-chrastany.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-tuchomerice.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-tuchomerice.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-tuchomerice.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-knezeves.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-knezeves.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-knezeves.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-dobroviz.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-dobroviz.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-dobroviz.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-hostoun.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-hostoun.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-hostoun.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-stredokluky.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-stredokluky.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-stredokluky.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.74</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/servis-vrat-braskov.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/servis-vrat-braskov.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/servis-vrat-braskov.html" />
+    <lastmod>2026-06-14</lastmod>
+    <priority>0.74</priority>
   </url>
 </urlset>
