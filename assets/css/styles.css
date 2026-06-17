@@ -747,6 +747,11 @@ p {
   max-width: 740px;
 }
 
+.section-heading-note {
+  margin: 12px 0 0;
+  max-width: 740px;
+}
+
 /* --------------------------------------------------------------------------
    9. Obsahové panely (GEO odpověď, podstránky)
    -------------------------------------------------------------------------- */
@@ -2109,6 +2114,19 @@ p {
   box-shadow: var(--shadow-soft);
 }
 
+.keyword-grid .brand-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  padding: 9px 16px;
+  color: var(--ink-2);
+  font-size: 14px;
+  font-weight: 700;
+}
+
 /* --------------------------------------------------------------------------
    20. FAQ
    -------------------------------------------------------------------------- */
@@ -2428,6 +2446,11 @@ textarea:focus {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.5;
+}
+
+.submission-note {
+  margin-top: 14px;
+  font-size: 14.5px;
 }
 
 .contact-map-panel {
