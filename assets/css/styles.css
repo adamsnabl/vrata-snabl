@@ -548,6 +548,10 @@ p {
   inset: 0;
 }
 
+.hero-media {
+  overflow: hidden;
+}
+
 .hero-media picture,
 .hero-media img {
   width: 100%;
@@ -1188,6 +1192,24 @@ p {
   color: var(--muted);
   font-size: 13.5px;
   line-height: 1.45;
+}
+
+.case-card figcaption a {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 10px;
+  color: var(--accent-text);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.case-card figcaption a:hover,
+.case-card figcaption a:focus-visible {
+  color: var(--accent-dark);
 }
 
 .realization-proof {
@@ -2997,6 +3019,7 @@ textarea:focus {
 .footer-contact div {
   display: grid;
   gap: 2px;
+  min-width: 0;
 }
 
 .footer-contact dt,
@@ -3016,10 +3039,19 @@ textarea:focus {
   color: #fff;
   font-size: 14.5px;
   font-weight: 700;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 /* větší dotyková plocha odkazů bez vlivu na layout */
-.footer-contact dd a,
+.footer-contact dd a {
+  display: inline-block;
+  max-width: 100%;
+  padding: 12px 0;
+  margin: -12px 0;
+  overflow-wrap: anywhere;
+}
+
 .form-note a {
   display: inline-block;
   padding: 12px 4px;
