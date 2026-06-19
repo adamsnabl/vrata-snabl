@@ -1092,4 +1092,53 @@
     <lastmod>2026-06-18</lastmod>
     <priority>0.66</priority>
   </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/poradna.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/poradna.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/poradna.html" />
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/faq.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/faq.html" />
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/reference.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/reference.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/reference.html" />
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.74</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/o-nas.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/o-nas.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/o-nas.html" />
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/jak-vybrat-garazova-vrata.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/jak-vybrat-garazova-vrata.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/jak-vybrat-garazova-vrata.html" />
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.74</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/hormann-vs-wisniowski.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/hormann-vs-wisniowski.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/hormann-vs-wisniowski.html" />
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.74</priority>
+  </url>
+  <url>
+    <loc>https://www.vratasnabl.cz/nejcastejsi-poruchy-vrat.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.vratasnabl.cz/nejcastejsi-poruchy-vrat.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vratasnabl.cz/nejcastejsi-poruchy-vrat.html" />
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.74</priority>
+  </url>
 </urlset>

@@ -117,7 +117,6 @@ if (header) {
 const revealTargets = document.querySelectorAll([
   ".lead-magnet__points div",
   ".proof-list div",
-  ".faq-list details",
   ".contact-methods a",
   ".form-trust span",
   ".hero-proof-panel div",
